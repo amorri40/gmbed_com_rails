@@ -1,7 +1,8 @@
 GmbedCom::Application.routes.draw do
-  
-  
 
+  devise_for :users
+
+  root :to => "games#new"
   
 
   scope "/admin" do
@@ -11,7 +12,8 @@ GmbedCom::Application.routes.draw do
      resources :games
   end
   
-  get "register" => "users#new", :as => "register"
+  #get "register" => "users#new", :as => "register"
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
