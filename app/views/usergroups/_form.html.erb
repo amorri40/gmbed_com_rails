@@ -1,0 +1,37 @@
+<%= form_for(@usergroup) do |f| %>
+  <% if @usergroup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usergroup.errors.count, "error") %> prohibited this usergroup from being saved:</h2>
+
+      <ul>
+      <% @usergroup.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :user_title %><br />
+    <%= f.text_field :user_title %>
+  </div>
+  <div class="field">
+    <%= f.label :html_pre %><br />
+    <%= f.text_field :html_pre %>
+  </div>
+  <div class="field">
+    <%= f.label :html_post %><br />
+    <%= f.text_field :html_post %>
+  </div>
+  <div class="field">
+    <%= f.label :perms %><br />
+    <%= f.text_field :perms %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

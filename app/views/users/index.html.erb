@@ -1,0 +1,51 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Reg time</th>
+    <th>Last activity</th>
+    <th>Last visit</th>
+    <th>Email</th>
+    <th>Dob</th>
+    <th>Timezone</th>
+    <th>Dst</th>
+    <th>Homepage</th>
+    <th>Aim</th>
+    <th>Msn</th>
+    <th>Yim</th>
+    <th>Bio</th>
+    <th>Occ</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.username %></td>
+    <td><%= user.password %></td>
+    <td><%= user.reg_time %></td>
+    <td><%= user.last_activity %></td>
+    <td><%= user.last_visit %></td>
+    <td><%= user.email %></td>
+    <td><%= user.dob %></td>
+    <td><%= user.timezone %></td>
+    <td><%= user.dst %></td>
+    <td><%= user.homepage %></td>
+    <td><%= user.aim %></td>
+    <td><%= user.msn %></td>
+    <td><%= user.yim %></td>
+    <td><%= user.bio %></td>
+    <td><%= user.occ %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

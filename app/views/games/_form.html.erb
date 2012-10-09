@@ -1,0 +1,89 @@
+<%= form_for(@game) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.number_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :exe %><br />
+    <%= f.text_field :exe %>
+  </div>
+  <div class="field">
+    <%= f.label :width %><br />
+    <%= f.number_field :width %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :parameters %><br />
+    <%= f.text_field :parameters %>
+  </div>
+  <div class="field">
+    <%= f.label :thumb %><br />
+    <%= f.text_field :thumb %>
+  </div>
+  <div class="field">
+    <%= f.label :backcolor %><br />
+    <%= f.text_field :backcolor %>
+  </div>
+  <div class="field">
+    <%= f.label :bimage %><br />
+    <%= f.text_field :bimage %>
+  </div>
+  <div class="field">
+    <%= f.label :pimage %><br />
+    <%= f.text_field :pimage %>
+  </div>
+  <div class="field">
+    <%= f.label :limage %><br />
+    <%= f.text_field :limage %>
+  </div>
+  <div class="field">
+    <%= f.label :load_width %><br />
+    <%= f.number_field :load_width %>
+  </div>
+  <div class="field">
+    <%= f.label :load_height %><br />
+    <%= f.number_field :load_height %>
+  </div>
+  <div class="field">
+    <%= f.label :loadx %><br />
+    <%= f.number_field :loadx %>
+  </div>
+  <div class="field">
+    <%= f.label :loady %><br />
+    <%= f.number_field :loady %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

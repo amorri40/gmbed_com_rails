@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  author: MyString
+  link: MyString
+  rating: 1
+  exe: MyString
+  width: 1
+  height: 1
+  parameters: MyString
+  thumb: MyString
+  backcolor: MyString
+  bimage: MyString
+  pimage: MyString
+  limage: MyString
+  load_width: 1
+  load_height: 1
+  loadx: 1
+  loady: 1
+
+two:
+  name: MyString
+  description: MyString
+  author: MyString
+  link: MyString
+  rating: 1
+  exe: MyString
+  width: 1
+  height: 1
+  parameters: MyString
+  thumb: MyString
+  backcolor: MyString
+  bimage: MyString
+  pimage: MyString
+  limage: MyString
+  load_width: 1
+  load_height: 1
+  loadx: 1
+  loady: 1

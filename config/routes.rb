@@ -1,4 +1,18 @@
 GmbedCom::Application.routes.draw do
+  
+  
+
+  
+
+  scope "/admin" do
+     resources :usergroups
+     resources :users
+     resources :genres
+     resources :games
+  end
+  
+  get "register" => "users#new", :as => "register"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,57 @@
+<h1>Listing games</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Author</th>
+    <th>Link</th>
+    <th>Rating</th>
+    <th>Exe</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Parameters</th>
+    <th>Thumb</th>
+    <th>Backcolor</th>
+    <th>Bimage</th>
+    <th>Pimage</th>
+    <th>Limage</th>
+    <th>Load width</th>
+    <th>Load height</th>
+    <th>Loadx</th>
+    <th>Loady</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @games.each do |game| %>
+  <tr>
+    <td><%= game.name %></td>
+    <td><%= game.description %></td>
+    <td><%= game.author %></td>
+    <td><%= game.link %></td>
+    <td><%= game.rating %></td>
+    <td><%= game.exe %></td>
+    <td><%= game.width %></td>
+    <td><%= game.height %></td>
+    <td><%= game.parameters %></td>
+    <td><%= game.thumb %></td>
+    <td><%= game.backcolor %></td>
+    <td><%= game.bimage %></td>
+    <td><%= game.pimage %></td>
+    <td><%= game.limage %></td>
+    <td><%= game.load_width %></td>
+    <td><%= game.load_height %></td>
+    <td><%= game.loadx %></td>
+    <td><%= game.loady %></td>
+    <td><%= link_to 'Show', game %></td>
+    <td><%= link_to 'Edit', edit_game_path(game) %></td>
+    <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Game', new_game_path %>
