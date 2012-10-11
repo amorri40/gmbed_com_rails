@@ -41,3 +41,9 @@ gem 'jquery-rails'
 gem "bcrypt-ruby"
 
 gem "devise"
+
+gem "kaminari"
+
+group :development, :test do
+  gem 'rspec-rails'
+end

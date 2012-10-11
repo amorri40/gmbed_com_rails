@@ -3,7 +3,7 @@
     <b> <%= game.name %> </b> <br />
     <%= image_tag("http://www.gmbed.com/"+game.thumb, :width => 80, :height => 50 ) %>
     <br />
-    <span>By <%= game.author %></span>
+    <span>By <%= link_to game.author , "/users/"+game.author %></span>
     <br />
     <span>Rating: <%= game.rating %></span>
   </li>

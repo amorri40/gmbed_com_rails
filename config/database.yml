@@ -29,6 +29,17 @@ development:
 #  pool: 5
 #  timeout: 5000
 
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: gmbed_test
+  pool: 5
+  username: ali_test
+  password: ali
+  host: localhost
+  socket: /Applications/XAMPP/xamppfiles/var/mysql/mysql.sock
+
 #production:
 #  adapter: sqlite3
 #  database: db/production.sqlite3

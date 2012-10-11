@@ -5,6 +5,7 @@ class PlayController < ApplicationController
    end
    
    def index 
+   	  @games = Game.order("name").page(params[:page]).per(5)
    end
    
 end
