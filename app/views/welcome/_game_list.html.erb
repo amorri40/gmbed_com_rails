@@ -1,6 +1,6 @@
 <% games_list.each do |game| %>
   <li>
-    <b> <%= game.name %> </b> <br />
+    <b> <%= link_to game.name, "/game/"+game.name %> </b> <br />
     <%= image_tag("http://www.gmbed.com/"+game.thumb, :width => 80, :height => 50 ) %>
     <br />
     <span>By <%= link_to game.author , "/users/"+game.author %></span>

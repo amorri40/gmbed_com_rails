@@ -1,0 +1,35 @@
+<div id="content">
+	
+	<div id="page_left">
+		
+		<div class="left_block">
+			<div class="block_header">
+				<h3><%= @game.name %></h3>
+			</div>
+			
+			
+			<div id="game_box">
+				<applet code="gmembed.Main.class" archive="http://gmbed.com/jar/gmembed2.jar" width="<%= @game.width %>" height="<%= @game.height %>" link="http://www.gmbed.com/games/<%= @game.link %>" exe="<%= @game.exe %>" params="<%= @game.parameters %>" background="<%= @game.backcolor %>" bimage="<%= @game.bimage %>" playbutton="<%= @game.pimage %>" loadfront="<%= @game.limage %>" loadingbarwidth="<%= @game.loadwidth %>" loadingbarheight="<%= @game.loadheight %>" loadingbarstartx="<%= @game.loadx %>" loadingbarstarty="<%= @game.loady %>" title="Java">You need to accept the java plugin to run this game! For more information, please visit http://www.gmbed.com</applet>
+			</div>
+		</div>
+	</div>
+	
+	<div id="page_right">
+	
+	<div class="right_block" style="min-height=400px;">
+			<div class="block_header">
+				<h3>Description</h3>
+			</div>
+			<div>
+				Name: <%= @game.name %> <br />
+				Description: <span><%= @game.name %> </span> <br />
+				<br />
+				<br />
+			</div>
+	</div>
+	
+	<%= render :partial => "shared/affiliates" %>
+		
+	</div>
+
+</div>
