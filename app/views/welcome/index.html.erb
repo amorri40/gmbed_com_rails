@@ -21,7 +21,7 @@
 <% @games.each do |game| %>
   <li>
     <b> <%= game.name %> </b>
-    <%= image_tag(game.thumb, :width => 80, :height => 50 ) %>
+    <%= image_tag("http://www.gmbed.com/"+game.thumb, :width => 80, :height => 50 ) %>
     <br />
     <span>By <%= game.author %></span>
     <br />
@@ -42,9 +42,14 @@
 <div id="recent_games" class="game_list">
 <ol>
 <!-- Ruby to load most popular -->
-<% @games.each do |game| %>
+<% @recent_games.each do |game| %>
   <li>
-    <small> <%= game.name %> </small>
+    <b> <%= game.name %> </b>
+    <%= image_tag("http://www.gmbed.com/"+game.thumb, :width => 80, :height => 50 ) %>
+    <br />
+    <span>By <%= game.author %></span>
+    <br />
+    <span>Rating: <%= game.rating %></span>
   </li>
 <% end %>
 </ol>
@@ -59,15 +64,20 @@
 
 <div class="right_block">
 <div class="block_header">
-<h3>Random Games</h3>
+<h3>Random Game</h3>
 </div>
 
 <div id="random_games" class="game_list">
 <ol>
 <!-- Ruby to load most popular -->
-<% @games.each do |game| %>
+<% @random_games.each do |game| %>
   <li>
-    <small> <%= game.name %> </small>
+    <b> <%= game.name %> </b>
+    <%= image_tag("http://www.gmbed.com/"+game.thumb, :width => 80, :height => 50 ) %>
+    <br />
+    <span>By <%= game.author %></span>
+    <br />
+    <span>Rating: <%= game.rating %></span>
   </li>
 <% end %>
 </ol>
