@@ -8,6 +8,7 @@ GmbedCom::Application.routes.draw do
   
   resources :play
   match 'upload' => "play#upload"
+  match 'users/:username' => "users#profile"
   
 
   scope "/admin" do

@@ -68,6 +68,11 @@ class UsersController < ApplicationController
       end
     end
   end
+  
+  def profile
+  	@user = User.where(:username => params[:username]).first
+  	
+  end
 
   # DELETE /users/1
   # DELETE /users/1.json

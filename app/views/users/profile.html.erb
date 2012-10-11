@@ -1,0 +1,33 @@
+<div id="content">
+	
+	<div id="page_left">
+		
+		<div class="left_block">
+			<div class="block_header">
+				<h3>Profile for <%= @user.username %></h3>
+			</div>
+			
+			
+			<div id="profile">
+				<%= gravatar_for(@user) %> <br />
+				<span>Name: <%= @user.username %></span> <br />
+				<span>Email: <%= @user.email %></span> <br />
+				<span>Location: <%= @user.loc %></span> <br />
+				<span>Occupation: <%= @user.occ %></span> <br />
+				<span>Homepage: <%= @user.homepage %></span> <br />
+				<span>Msn: <%= @user.msn %></span> <br />
+				
+			</div>
+		</div>
+	</div>
+	
+	<div id="page_right">
+		<div class="right_block">
+			<div class="block_header">
+				<h3>Affiliates</h3>
+			</div>
+			<iframe src="http://www.gamemakerblog.com/gma/gatob.php?rows=6&cols=1&userid=246" marginwidth="0" marginheight="0" style="hspace:0;vspace:0" frameborder="0" height="186" scrolling="no" width="88"></iframe>
+		</div>
+	</div>
+
+</div>
