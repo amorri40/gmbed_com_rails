@@ -1,8 +1,10 @@
 GmbedCom::Application.routes.draw do
 
-  devise_for :users
+  
 
-  root :to => "games#new"
+  get "welcome/index"
+
+  root :to => "welcome#index"
   
 
   scope "/admin" do
