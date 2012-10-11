@@ -5,5 +5,7 @@ belongs_to :user
 belongs_to :genre
 validates_associated :genre
 validates_associated :user
+validates :name, :presence => true
+validates :author, :presence => true
 
 end

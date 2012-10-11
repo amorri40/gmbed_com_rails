@@ -6,6 +6,9 @@ GmbedCom::Application.routes.draw do
 
   root :to => "welcome#index"
   
+  resources :play
+  match 'upload' => "play#upload"
+  
 
   scope "/admin" do
      resources :usergroups

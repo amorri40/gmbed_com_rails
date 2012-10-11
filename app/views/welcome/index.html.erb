@@ -1,2 +1,146 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div id="content">
+
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td class="header_left" />
+<td class="header">Welcome</td>
+<td class="header_right" />
+</tr>
+
+<tr>
+<td  class="side_left"/>			
+<td  class="content" width="810">Welcome to gmbed.com the home of embedded game maker games. All games on this site are free to play. Currently the games only work on windows os. You can also upload your games to the site so they will be embedded. This site is still in beta.</td>
+<td class="side_right"/>
+</tr>
+
+<tr>
+<td class="bottom_left"/>
+<td class="bottom"/>
+<td class="bottom_right"/>
+</tr>
+</table>
+
+<!-- SPACING TABLE -->
+
+<table  border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td height="10"/>
+</tr>
+</table>
+<!-- END SPACING TABLE -->
+
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td class="header_left" />
+<td class="header" width='610'>Popular Games</td>
+<td class="header_right" />
+
+<td rowspan="3" width="20"/>
+
+<td class="header_left" />
+<td class="header" width='140'>Random games</td>
+<td class="header_right" />
+</tr>
+
+<tr>
+<td  class="side_left"/>			
+<td  class="content">
+
+<div id="popular_games" class="game_list">
+<ol>
+<!-- Ruby to load most popular -->
+<% @games.each do |game| %>
+  <li>
+    <small> <%= game.name %> </small>
+  </li>
+<% end %>
+</ol>
+</div>
+
+</table>
+</td>
+
+<td class="side_right"/>
+
+<td  class="side_left"/>			
+<td  class="content">
+<table border="0" cellpadding="0" cellspacing="0">
+
+<!-- Ruby to load -->
+
+</table>
+</td>
+<td class="side_right"/>
+</tr>
+
+<tr>
+<td class="bottom_left"/>
+<td class="bottom"/>
+<td class="bottom_right"/>
+
+<td class="bottom_left"/>
+<td class="bottom"/>
+<td class="bottom_right"/>
+</tr>
+
+<!-- SPACING TABLE -->
+
+<table  border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td height="10"/>
+</tr>
+</table>
+<!-- END SPACING TABLE -->
+
+
+
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td class="header_left" />
+<td class="header" width='610'>Recent Games</td>
+<td class="header_right" />
+
+<td rowspan="3" width="20"/>
+
+<td class="header_left" />
+<td class="header" width='140' >Affilates</td>
+<td class="header_right" />
+</tr>
+
+<tr>
+<td  class="side_left"/>			
+<td  class="content">
+<table border="0" cellpadding="0" cellspacing="0">
+
+<!-- Ruby to load Recent games -->
+
+</table>
+</td>
+<td class="side_right"/>
+
+<td  class="side_left"/>			
+<td  class="content">
+<iframe src="http://www.gamemakerblog.com/gma/gatob.php?rows=6&cols=1&userid=246" marginwidth="0" marginheight="0" style="hspace:0;vspace:0" frameborder="0" height="186" scrolling="no" width="88"></iframe>
+</td>
+<td class="side_right"/>
+</tr>
+
+<tr>
+<td class="bottom_left"/>
+<td class="bottom"/>
+<td class="bottom_right"/>
+
+<td class="bottom_left"/>
+<td class="bottom"/>
+<td class="bottom_right"/>
+</tr>
+
+</table>
+</table>
+</div>

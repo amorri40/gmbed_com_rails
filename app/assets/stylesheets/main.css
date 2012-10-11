@@ -86,3 +86,12 @@ A:hover {text-decoration: underline;}
 	padding:0;
 	margin:0;
 }
+
+.game_list ol li {
+padding: 0 5px 10px 0;
+width: 126px;
+height: 140px;
+overflow: hidden;
+float: left;
+position: relative;
+}
