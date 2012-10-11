@@ -20,7 +20,12 @@
 <!-- Ruby to load most popular -->
 <% @games.each do |game| %>
   <li>
-    <small> <%= game.name %> </small>
+    <b> <%= game.name %> </b>
+    <%= image_tag(game.thumb, :width => 80, :height => 50 ) %>
+    <br />
+    <span>By <%= game.author %></span>
+    <br />
+    <span>Rating: <%= game.rating %></span>
   </li>
 <% end %>
 </ol>
