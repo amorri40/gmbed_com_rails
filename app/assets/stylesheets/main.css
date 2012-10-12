@@ -110,6 +110,7 @@ A:hover {text-decoration: underline;}
 	width:100%;
 	height:100px;
 	list-style-type: none;
+	padding:0; margin:0;
 	
 }
 

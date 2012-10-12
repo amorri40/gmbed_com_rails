@@ -8,7 +8,7 @@
 			</div>
 			
 			
-			<div id="game_box">
+			<div id="game_box" class="block_content">
 				<applet code="gmembed.Main.class" archive="http://gmbed.com/jar/gmembed2.jar" width="<%= @game.width %>" height="<%= @game.height %>" link="http://www.gmbed.com/games/<%= @game.link %>" exe="<%= @game.exe %>" params="<%= @game.parameters %>" background="<%= @game.backcolor %>" bimage="<%= @game.bimage %>" playbutton="<%= @game.pimage %>" loadfront="<%= @game.limage %>" loadingbarwidth="<%= @game.loadwidth %>" loadingbarheight="<%= @game.loadheight %>" loadingbarstartx="<%= @game.loadx %>" loadingbarstarty="<%= @game.loady %>" title="Java">You need to accept the java plugin to run this game! For more information, please visit http://www.gmbed.com</applet>
 			</div>
 		</div>
@@ -20,7 +20,7 @@
 			<div class="block_header">
 				<h3>Description</h3>
 			</div>
-			<div>
+			<div class="block_content">
 				Name: <%= @game.name %> <br />
 				Description: <span><%= @game.name %> </span> <br />
 				<br />

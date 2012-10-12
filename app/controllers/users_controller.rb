@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!  
+  before_filter :is_admin
+   
   # GET /users
   # GET /users.json
   def index
@@ -85,4 +88,10 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  protected 
+	  def is_admin
+		  redirect_to "/" unless current_user.is_admin?
+	  end
+  
 end

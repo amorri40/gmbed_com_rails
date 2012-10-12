@@ -1,4 +1,6 @@
 class PlayController < ApplicationController
+	before_filter :authenticate_user!, :except => [:game, :index]  
+
 
    def upload
     

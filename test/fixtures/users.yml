@@ -1,12 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  username: MyString
-  password: MyString
+admin:
+  username: Admin
+  password: test
   reg_time: 2012-10-09 20:42:43
   last_activity: 2012-10-09 20:42:43
   last_visit: 2012-10-09 20:42:43
-  email: MyString
+  email: admin@gmbed.com
   dob: 2012-10-09
   timezone: 1
   dst: 1
@@ -16,14 +16,15 @@ one:
   yim: MyString
   bio: MyString
   occ: MyString
+  usergroup: admin
 
 two:
-  username: MyString
-  password: MyString
+  username: two
+  password: two
   reg_time: 2012-10-09 20:42:43
   last_activity: 2012-10-09 20:42:43
   last_visit: 2012-10-09 20:42:43
-  email: MyString
+  email: two@gmbed.com
   dob: 2012-10-09
   timezone: 1
   dst: 1
@@ -33,3 +34,22 @@ two:
   yim: MyString
   bio: MyString
   occ: MyString
+  usergroup: guest
+  
+normal_user:
+  username: normal_user
+  password: normal
+  reg_time: 2012-10-09 20:42:43
+  last_activity: 2012-10-09 20:42:43
+  last_visit: 2012-10-09 20:42:43
+  email: normal@gmbed.com
+  dob: 2012-10-09
+  timezone: 1
+  dst: 1
+  homepage: MyString
+  aim: MyString
+  msn: MyString
+  yim: MyString
+  bio: MyString
+  occ: MyString
+  usergroup:

@@ -28,9 +28,19 @@ GEM
     activesupport (3.2.8)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.3.2)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.3)
+    capybara (1.1.2)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 0.1.4)
+    childprocess (0.3.5)
+      ffi (~> 1.0, >= 1.0.6)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -40,6 +50,13 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    ffi (1.1.5)
+    guard (1.4.0)
+      listen (>= 0.4.2)
+      thor (>= 0.14.6)
+    guard-rspec (2.1.0)
+      guard (>= 1.1)
+      rspec (~> 2.11)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -50,6 +67,9 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    libwebsocket (0.1.5)
+      addressable
+    listen (0.5.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -57,6 +77,7 @@ GEM
     mime-types (1.19)
     multi_json (1.3.6)
     mysql2 (0.3.11)
+    nokogiri (1.5.5)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -82,6 +103,7 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (0.9.2.2)
+    rb-fsevent (0.9.2)
     rdoc (3.12)
       json (~> 1.4)
     rspec (2.11.0)
@@ -97,11 +119,18 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.11.0)
+    rubyzip (0.9.9)
     sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    selenium-webdriver (2.25.0)
+      childprocess (>= 0.2.5)
+      libwebsocket (~> 0.1.3)
+      multi_json (~> 1.0)
+      rubyzip
+    spork (0.9.2)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -117,17 +146,23 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    xpath (0.1.4)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bcrypt-ruby
+  capybara
   devise
+  guard-rspec
   jquery-rails
   kaminari
   mysql2
   rails (= 3.2.8)
+  rb-fsevent
   rspec-rails
   sass-rails (~> 3.2.3)
+  spork
   uglifier (>= 1.0.3)

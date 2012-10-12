@@ -15,8 +15,8 @@ one:
   bimage: MyString
   pimage: MyString
   limage: MyString
-  load_width: 1
-  load_height: 1
+  loadwidth: 1
+  loadheight: 1
   loadx: 1
   loady: 1
 
@@ -35,7 +35,7 @@ two:
   bimage: MyString
   pimage: MyString
   limage: MyString
-  load_width: 1
-  load_height: 1
+  loadwidth: 1
+  loadheight: 1
   loadx: 1
   loady: 1

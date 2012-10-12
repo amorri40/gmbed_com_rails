@@ -8,4 +8,6 @@ validates_associated :user
 validates :name, :presence => true
 validates :author, :presence => true
 
+validates_uniqueness_of :name
+
 end

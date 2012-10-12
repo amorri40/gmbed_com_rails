@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  user_title: MyString
-  html_pre: MyString
-  html_post: MyString
-  perms: MyString
+guest:
+  name: Guests
+  user_title: Guest
+  html_pre: 
+  html_post: 
+  perms: 
+  user: two
 
 two:
-  name: MyString
-  user_title: MyString
-  html_pre: MyString
-  html_post: MyString
-  perms: MyString
+  name: Administrators
+  user_title: Admin
+  html_pre: 
+  html_post: </b>
+  perms:
+  user: admin

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121012111428) do
+ActiveRecord::Schema.define(:version => 20121012133628) do
 
   create_table "games", :force => true do |t|
     t.string  "name",        :limit => 24,  :default => "example",     :null => false
@@ -95,6 +95,11 @@ ActiveRecord::Schema.define(:version => 20121012111428) do
     t.string   "perms"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "usergroups_users", :id => false, :force => true do |t|
+    t.integer "usergroup_id", :null => false
+    t.integer "user_id",      :null => false
   end
 
   create_table "users", :primary_key => "userid", :force => true do |t|

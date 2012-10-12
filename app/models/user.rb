@@ -17,6 +17,24 @@ attr_accessible :aim, :bio, :dob, :dst, :email, :homepage, :last_activity, :last
   validates :password, presence: true, length: {minimum: 5}
   #validates_confirmation_of :password
   
+  validates_uniqueness_of :username
+  
   has_many :games
+  has_and_belongs_to_many :usergroup
+  
+  
+  def has_group?(rolename) 
+	  self.usergroup.find_by_user_title(rolename) ? true : false
+  end
+  
+  def is_admin?
+	  has_group?('Admin')
+  end
+  
+  def name
+	  self.username
+  end
+  
+  
   
 end
