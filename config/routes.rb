@@ -11,6 +11,7 @@ GmbedCom::Application.routes.draw do
   match 'users/:username' => "users#profile"
   match 'game/:gamename' => "play#game"
   
+  match 'admin' => "admin#index"
 
   scope "/admin" do
      resources :usergroups
