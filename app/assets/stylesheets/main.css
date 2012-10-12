@@ -155,5 +155,10 @@ background-image: -webkit-gradient(
 );
 }
 
+.block_content {
+	padding-left: 5%;
+	padding-bottom: 5%;
+	}
+
 #page_left {float:left; width:700px; height:200px;}
 #page_right {float:right; width:150px; height:200px;}

@@ -6,7 +6,7 @@ GmbedCom::Application.routes.draw do
 
   root :to => "welcome#index"
   
-  resources :play
+  match 'play' => "play#index"
   match 'upload' => "play#upload"
   match 'users/:username' => "users#profile"
   match 'game/:gamename' => "play#game"
@@ -20,7 +20,12 @@ GmbedCom::Application.routes.draw do
   end
   
   #get "register" => "users#new", :as => "register"
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+  
+  scope "/account" do
+  	 devise_for :users, path_names: {sign_in: "/login", sign_out: "/logout"}
+  end
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

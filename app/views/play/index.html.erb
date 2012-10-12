@@ -7,35 +7,37 @@
 				<h3>All Games</h3>
 			</div>
 			
+			<div class="block_content">
 			
-			<div id="popular_games" class="game_index">
-			<%= paginate @games %>
-				<ul>
-				<div style="display:table;">
-				<% @games.each do |game| %>
-				  <li>
-				  
-				    <div style="display:table-row;">
-				    <div style="display:table-cell; padding-right: 10px;">
-					    <b> <%= game.name %> </b> <br />
-					    <%= image_tag("http://www.gmbed.com/"+game.thumb, :width => 80, :height => 50 ) %>
-					    <br />
-					    <span>By <%= link_to game.author , "/users/"+game.author %></span>
-					    <br />
-					    <span>Rating: <%= game.rating %></span>
-				    </div>
-				    
-				    <div>
-				    <span> <%= game.description %></span>
-				    </div>
-				    </div> <!-- end row div -->
-				      
-				  </li>
-                <% end %>	
-                </div> <!-- end table div -->
-				</ol>
-				<br /><br />
+				<div id="popular_games" class="game_index">
 				<%= paginate @games %>
+					<ul>
+					<div style="display:table;">
+					<% @games.each do |game| %>
+					  <li>
+					  
+					    <div style="display:table-row;">
+					    <div style="display:table-cell; padding-right: 10px;">
+						    <b> <%= link_to game.name, "/game/"+game.name %> </b> <br />
+						    <%= image_tag("http://www.gmbed.com/"+game.thumb, :width => 80, :height => 50 ) %>
+						    <br />
+						    <span>By <%= link_to game.author , "/users/"+game.author %></span>
+						    <br />
+						    <span>Rating: <%= game.rating %></span>
+					    </div>
+					    
+					    <div>
+					    <span> <%= game.description %></span>
+					    </div>
+					    </div> <!-- end row div -->
+					      
+					  </li>
+	                <% end %>	
+	                </div> <!-- end table div -->
+					</ol>
+					<br /><br />
+					<%= paginate @games %>
+				</div>
 			</div>
 		</div>
 	</div>
