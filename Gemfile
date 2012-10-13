@@ -52,3 +52,7 @@ group :development, :test do
   gem "rb-fsevent"
 end
 
+group :development do
+  gem "quiet_assets"
+end
+
