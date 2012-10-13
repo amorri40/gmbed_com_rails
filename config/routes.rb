@@ -14,6 +14,7 @@ GmbedCom::Application.routes.draw do
   match 'admin' => "admin#index"
   
   post 'addfav' => "play#addfav"
+  delete 'removefav' => "play#removefav"
 
   scope "/admin" do
      resources :usergroups
@@ -23,9 +24,11 @@ GmbedCom::Application.routes.draw do
 	     end
      end
      resources :genres
-     resources :games do
+     
+  end
+  
+  resources :games do
 	     resources :game_posts
-     end
   end
   
   #get "register" => "users#new", :as => "register"

@@ -50,9 +50,12 @@ group :development, :test do
   gem "guard-rspec"
   gem "spork"
   gem "rb-fsevent"
+  gem "factory_girl"
 end
 
 group :development do
   gem "quiet_assets"
 end
 
+gem "wicked"
+gem "carrierwave"

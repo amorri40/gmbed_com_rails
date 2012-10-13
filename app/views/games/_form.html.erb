@@ -1,4 +1,4 @@
-<%= form_for(@game) do |f| %>
+<%= form_for @game, :html => {:multipart => true} do |f| %>
   <% if @game.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
@@ -11,26 +11,20 @@
     </div>
   <% end %>
 
+  <%= f.hidden_field :author %>
+  <%= f.hidden_field :thumb %>
+  <%= f.hidden_field :link %>
+  <%= f.hidden_field :rating %>
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :link %><br />
-    <%= f.text_field :link %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br />
-    <%= f.number_field :rating %>
-  </div>
+
   <div class="field">
     <%= f.label :exe %><br />
     <%= f.text_field :exe %>
@@ -47,10 +41,7 @@
     <%= f.label :parameters %><br />
     <%= f.text_field :parameters %>
   </div>
-  <div class="field">
-    <%= f.label :thumb %><br />
-    <%= f.text_field :thumb %>
-  </div>
+  
   <div class="field">
     <%= f.label :backcolor %><br />
     <%= f.text_field :backcolor %>
@@ -68,12 +59,12 @@
     <%= f.text_field :limage %>
   </div>
   <div class="field">
-    <%= f.label :load_width %><br />
-    <%= f.number_field :load_width %>
+    <%= f.label :loadwidth %><br />
+    <%= f.number_field :loadwidth %>
   </div>
   <div class="field">
-    <%= f.label :load_height %><br />
-    <%= f.number_field :load_height %>
+    <%= f.label :loadheight %><br />
+    <%= f.number_field :loadheight %>
   </div>
   <div class="field">
     <%= f.label :loadx %><br />
@@ -83,6 +74,10 @@
     <%= f.label :loady %><br />
     <%= f.number_field :loady %>
   </div>
+  <div class="field">
+    <%= f.file_field :gamelink %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

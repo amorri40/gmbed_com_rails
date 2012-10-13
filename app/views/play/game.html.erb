@@ -26,6 +26,7 @@
 				<% @game.game_posts.each do |post| %>
 					<br /><%= post.user_id %> 
 					<%= post.comment %> <br />
+					
 				<% end %>
 				<% if user_signed_in? && (not current_user.is_guest?) %>
 					<%= form_for [@game, GamePost.new] do |f| %>
@@ -57,9 +58,19 @@
 			<div class="block_content">
 				Name: <%= @game.name %> <br />
 				Description: <span><%= @game.name %> </span> <br />
+				By: <span><%= link_to @game.author, "/users/"+@game.author %> </span> <br />
 				<br />
 				<br />
-				<%= button_to 'Add to favourites', addfav_path({:gamename => @game.name}), :method => :post %>
+				<% if current_user.has_fav?(@game.id) %>
+					<%= button_to 'Add to favourites', addfav_path({:gamename => @game.name}), :method => :post %>
+				<% else %>
+					<%= button_to 'Remove from favourites', removefav_path({:gamename => @game.name}), :method => :delete %>
+				<% end %>
+				
+				<% if current_user.created_game?(@game.id) %>
+					<%= button_to 'Edit game', edit_game_path(@game), :method => :get %>
+					<%= button_to 'Delete game', game_path(@game), :method => :delete, :confirm => "Are you sure you want to delete this game?" %>
+				<% end %>
 				
 			</div>
 	</div>

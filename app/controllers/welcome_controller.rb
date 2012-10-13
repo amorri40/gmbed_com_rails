@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    logger.debug "Hello world"
     @games = Game.order("rating DESC").limit(6)
     @random_games = Game.offset(rand(Game.count)).limit(1)
     @recent_games = Game.order("id DESC").limit(6)

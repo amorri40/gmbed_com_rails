@@ -18,6 +18,7 @@ attr_accessible :aim, :bio, :dob, :dst, :email, :homepage, :last_activity, :last
   #validates_confirmation_of :password
   
   validates_uniqueness_of :username
+  validates_format_of :username, :with => /^[A-Za-z\d_]+$/
   
   has_one :profile
   has_many :games
@@ -57,6 +58,11 @@ attr_accessible :aim, :bio, :dob, :dst, :email, :homepage, :last_activity, :last
   # hasfav? will return whether this user has a favourite game with that id
   def has_fav?(game_id)
 	  FavouriteGame.where(:user_id => self.id, :game_id => game_id).empty?
+  end
+  
+  # created_game? will return whether this user is the author of game_id
+  def created_game?(game_id)
+      not Game.where(:id => game_id, :author => self.username).empty?
   end
   
   

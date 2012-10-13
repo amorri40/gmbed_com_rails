@@ -19,7 +19,8 @@
 
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path %> |
+  <%= link_to 'View profile', "/users/"+current_user.username %> | 
+  <%= link_to 'Account settings', edit_user_registration_path %> |
   <% if current_user.is_admin? %> <%= link_to 'AdminCP', admin_path %> | <% end %>
   <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 <% else %>

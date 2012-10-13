@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013145637) do
+ActiveRecord::Schema.define(:version => 20121013204701) do
 
   create_table "favourite_games", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20121013145637) do
     t.string  "loadheight",  :limit => 4,                              :null => false
     t.string  "loadx",       :limit => 4,                              :null => false
     t.string  "loady",       :limit => 4,                              :null => false
+    t.string  "gamelink"
   end
 
   create_table "games_old", :force => true do |t|
