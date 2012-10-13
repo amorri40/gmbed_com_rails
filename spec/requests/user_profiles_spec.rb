@@ -14,7 +14,13 @@ describe "UserProfiles" do
   it "Allows users to view comments on a users page" do 
 	  login_as_normal
 	  visit "/users/two"
-	  current_path.should eq "/users/two"
-	  #page.should have_content('Comments')
+	  page.should have_content('Comments')
   end
+  
+  it "Shows all the games by this user" do 
+	  login_as_normal
+	  visit "/users/two"
+	  page.should have_content('Games by two')
+  end
+  
 end

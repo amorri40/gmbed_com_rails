@@ -18,10 +18,9 @@
 
 
 <div id="popular_games" class="game_list" style="min-height: 150px;">
-<ol>
+
 <%= render :partial => "game_list", :locals => { :games_list => @games } %>
 
-</ol>
 </div>
 </div>
 
@@ -33,11 +32,10 @@
 
 
 <div id="recent_games" class="game_list" style="min-height: 150px;">
-<ol>
-<!-- Ruby to load most popular -->
+
+
 <%= render :partial => "game_list", :locals => { :games_list => @recent_games } %>
 
-</ol>
 </div>
 </div>
 
@@ -53,9 +51,9 @@
 </div>
 
 <div id="random_games" class="game_list" style="min-height: 150px;">
-<ol>
+
 <%= render :partial => "game_list", :locals => { :games_list => @random_games } %>
-</ol>
+
 </div>
 </div>
 

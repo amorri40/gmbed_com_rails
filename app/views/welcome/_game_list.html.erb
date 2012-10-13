@@ -1,3 +1,4 @@
+<ol>
 <% games_list.each do |game| %>
   <li>
     <b> <%= link_to game.name, "/game/"+game.name %> </b> <br />
@@ -8,3 +9,4 @@
     <span>Rating: <%= game.rating %></span>
   </li>
 <% end %>
+</ol>

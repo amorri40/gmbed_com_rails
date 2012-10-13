@@ -77,6 +77,7 @@ class UsersController < ApplicationController
   	@user = User.where(:username => params[:username]).first
   	@user.ensure_profile
   	@profile =  @user.profile
+  	@games = Game.where(:author => @user.username)
   end
 
   # DELETE /users/1
