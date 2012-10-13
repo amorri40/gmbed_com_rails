@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121012133628) do
+ActiveRecord::Schema.define(:version => 20121012190640) do
+
+  create_table "game_posts", :force => true do |t|
+    t.integer  "game_id"
+    t.string   "comment"
+    t.integer  "rating"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id",    :null => false
+  end
 
   create_table "games", :force => true do |t|
     t.string  "name",        :limit => 24,  :default => "example",     :null => false
@@ -39,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20121012133628) do
     t.string  "name",        :limit => 24,  :default => "example",     :null => false
     t.string  "description", :limit => 500, :default => "none",        :null => false
     t.string  "author",      :limit => 20,  :default => "tgmg",        :null => false
+    t.integer "genre",                      :default => 0,             :null => false
     t.string  "link",        :limit => 500, :default => "example.zip", :null => false
     t.integer "rating",                     :default => 5,             :null => false
     t.string  "exe",         :limit => 30,  :default => "example.exe", :null => false
@@ -134,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20121012133628) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "user_id",                                              :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

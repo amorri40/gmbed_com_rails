@@ -12,8 +12,40 @@
 				<applet code="gmembed.Main.class" archive="http://gmbed.com/jar/gmembed2.jar" width="<%= @game.width %>" height="<%= @game.height %>" link="http://www.gmbed.com/games/<%= @game.link %>" exe="<%= @game.exe %>" params="<%= @game.parameters %>" background="<%= @game.backcolor %>" bimage="<%= @game.bimage %>" playbutton="<%= @game.pimage %>" loadfront="<%= @game.limage %>" loadingbarwidth="<%= @game.loadwidth %>" loadingbarheight="<%= @game.loadheight %>" loadingbarstartx="<%= @game.loadx %>" loadingbarstarty="<%= @game.loady %>" title="Java">You need to accept the java plugin to run this game! For more information, please visit http://www.gmbed.com</applet>
 			</div>
 		</div>
+	
+	
+	
+	
+	<div class="left_block">
+			<div class="block_header">
+				<h3>Comments</h3>
+			</div>
+			
+			
+			<div class="block_content">
+				<% @game.game_posts.each do |post| %>
+					<br /><%= post.user_id %> 
+					<%= post.comment %> <br />
+				<% end %>
+				<%= form_for [@game, GamePost.new] do |f| %>
+					
+					
+					<div class="field">
+					    <h4>Add a Comment:</h4><br />
+					    <%= f.text_area :comment %>
+				    </div>
+				    <div class="actions">
+					    <%= f.submit "Add Comment" %>
+					</div>
+				<% end %>
+			    
+			</div>
 	</div>
 	
+	
+	
+	</div> <!-- End Page Left -->	
+	<!-- Page right -->
 	<div id="page_right">
 	
 	<div class="right_block" style="min-height=400px;">

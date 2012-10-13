@@ -17,7 +17,9 @@ GmbedCom::Application.routes.draw do
      resources :usergroups
      resources :users
      resources :genres
-     resources :games
+     resources :games do
+	     resources :game_posts
+     end
   end
   
   #get "register" => "users#new", :as => "register"
