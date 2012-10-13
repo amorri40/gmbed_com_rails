@@ -19,7 +19,9 @@ attr_accessible :aim, :bio, :dob, :dst, :email, :homepage, :last_activity, :last
   
   validates_uniqueness_of :username
   
+  has_one :profile
   has_many :games
+  has_many :profile_comments
   has_and_belongs_to_many :usergroup
   
   
@@ -31,10 +33,24 @@ attr_accessible :aim, :bio, :dob, :dst, :email, :homepage, :last_activity, :last
 	  has_group?('Admin')
   end
   
+  def is_guest?
+	  has_group?('Guest')
+  end
+  
   def name
 	  self.username
   end
   
+  def ensure_profile
+	  if self.profile.nil?
+		  	profile = Profile.new()
+		  	profile.user_id = self.id
+		  	profile.save
+		  	self.profile = profile#Profile.new(:user_id => @user.id)
+		  	self.save 
+	  end
+	  self.profile
+  end
   
   
 end

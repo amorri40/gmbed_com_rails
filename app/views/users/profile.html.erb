@@ -8,7 +8,7 @@
 			</div>
 			
 			
-			<div id="profile">
+			<div id="profile" class="block_content">
 				<%= gravatar_for(@user) %> <br />
 				<span>Name: <%= @user.username %></span> <br />
 				<span>Email: <%= @user.email %></span> <br />
@@ -19,7 +19,39 @@
 				
 			</div>
 		</div>
-	</div>
+		
+		<div class="left_block">
+			<div class="block_header">
+				<h3>Comments</h3>
+			</div>
+			
+			
+			<div id="profile_comments" class="block_content">
+				<% @profile.profile_comments.each do |post| %>
+							<br /><%= post.user_id %> 
+							<%= post.comment %> <br />
+				<% end %>
+				
+				<% if user_signed_in? && (not current_user.is_guest?) %>
+					<%= form_for [@user, @profile, ProfileComment.new] do |f| %>
+						
+						
+						<div class="field">
+						    <h4><%= f.label :comment %></h4><br />
+						    <%= f.text_area :comment %>
+					    </div>
+					    <div class="actions">
+						    <%= f.submit "Add Comment" %>
+						</div>
+					<% end %>
+				<% end %>
+				
+				
+			</div>
+		</div>
+		
+		
+	</div> <!-- End page left -->
 	
 	<div id="page_right">
 		<%= render :partial => "shared/affiliates" %>

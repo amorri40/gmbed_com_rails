@@ -15,7 +15,11 @@ GmbedCom::Application.routes.draw do
 
   scope "/admin" do
      resources :usergroups
-     resources :users
+     resources :users do 
+	     resources :profiles do 
+		     resources :profile_comments
+	     end
+     end
      resources :genres
      resources :games do
 	     resources :game_posts

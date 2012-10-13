@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!  
-  before_filter :is_admin
+  before_filter :is_admin, :except => [:profile]
    
   # GET /users
   # GET /users.json
@@ -43,7 +43,8 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params[:user]) 
+    @user.profile = Profile.new()
 
     respond_to do |format|
       if @user.save
@@ -74,7 +75,8 @@ class UsersController < ApplicationController
   
   def profile
   	@user = User.where(:username => params[:username]).first
-  	
+  	@user.ensure_profile
+  	@profile =  @user.profile
   end
 
   # DELETE /users/1

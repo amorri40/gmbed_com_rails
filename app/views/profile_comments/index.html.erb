@@ -1,0 +1,19 @@
+<div id="content">
+	
+	<div id="page_left">
+		
+		<div class="left_block">
+			<div class="block_header">
+				<h3>Profile Comments for <%= @user.name %></h3>
+			</div>
+			
+			
+			<div class="block_content">
+				<% @profile.profile_comments.each do |post| %>
+				<%= post.comment %>
+				<%= post.rating %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

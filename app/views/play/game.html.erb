@@ -27,16 +27,18 @@
 					<br /><%= post.user_id %> 
 					<%= post.comment %> <br />
 				<% end %>
-				<%= form_for [@game, GamePost.new] do |f| %>
-					
-					
-					<div class="field">
-					    <h4>Add a Comment:</h4><br />
-					    <%= f.text_area :comment %>
-				    </div>
-				    <div class="actions">
-					    <%= f.submit "Add Comment" %>
-					</div>
+				<% if user_signed_in? && (not current_user.is_guest?) %>
+					<%= form_for [@game, GamePost.new] do |f| %>
+						
+						
+						<div class="field">
+						    <h4><%= f.label :comment %></h4><br />
+						    <%= f.text_area :comment %>
+					    </div>
+					    <div class="actions">
+						    <%= f.submit "Add Comment" %>
+						</div>
+					<% end %>
 				<% end %>
 			    
 			</div>
