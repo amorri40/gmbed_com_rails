@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013120639) do
+ActiveRecord::Schema.define(:version => 20121013145637) do
+
+  create_table "favourite_games", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.integer  "game_id",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "game_posts", :force => true do |t|
     t.integer  "game_id"
@@ -158,7 +165,6 @@ ActiveRecord::Schema.define(:version => 20121013120639) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "user_id",                                              :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

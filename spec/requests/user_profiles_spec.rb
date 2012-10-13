@@ -8,6 +8,7 @@ describe "UserProfiles" do
   fixtures :game_posts
   fixtures :profiles
   fixtures :profile_comments
+  fixtures :favourite_games
   
   include RequestHelpers
 
@@ -21,6 +22,12 @@ describe "UserProfiles" do
 	  login_as_normal
 	  visit "/users/two"
 	  page.should have_content('Games by two')
+  end
+  
+  it "Shows the users favourite games" do 
+	  login_as_normal
+	  visit "/users/two"
+	  page.should have_content('Favourites')
   end
   
 end

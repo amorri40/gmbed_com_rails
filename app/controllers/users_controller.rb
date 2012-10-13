@@ -78,6 +78,12 @@ class UsersController < ApplicationController
   	@user.ensure_profile
   	@profile =  @user.profile
   	@games = Game.where(:author => @user.username)
+  	
+  	# get the favourite games (surly a better way than this)
+  	@fav_games = []
+  	@user.favourite_games.each {|fav| @fav_games << fav.game }
+  	
+  	
   end
 
   # DELETE /users/1

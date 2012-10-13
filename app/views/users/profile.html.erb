@@ -33,6 +33,17 @@
 		
 		<div class="left_block">
 			<div class="block_header">
+				<h3>Favourites</h3>
+			</div>
+			
+			
+			<div id="fav_games" class="game_list" style="min-height: 150px;">
+			<%= render :partial => "welcome/game_list", :locals => { :games_list => @fav_games } %>
+			</div>
+		</div>
+		
+		<div class="left_block">
+			<div class="block_header">
 				<h3>Comments</h3>
 			</div>
 			

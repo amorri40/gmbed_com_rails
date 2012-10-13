@@ -11,5 +11,6 @@ validates :author, :presence => true
 validates_uniqueness_of :name
 
 has_many :game_posts
+#has_many :favourite_game, :foreign_key => "game_id"
 
 end

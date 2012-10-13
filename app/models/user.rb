@@ -23,7 +23,7 @@ attr_accessible :aim, :bio, :dob, :dst, :email, :homepage, :last_activity, :last
   has_many :games
   has_many :profile_comments
   has_and_belongs_to_many :usergroup
-  
+  has_many :favourite_games
   
   def has_group?(rolename) 
 	  self.usergroup.find_by_user_title(rolename) ? true : false
@@ -37,10 +37,12 @@ attr_accessible :aim, :bio, :dob, :dst, :email, :homepage, :last_activity, :last
 	  has_group?('Guest')
   end
   
+  #name function will return the username
   def name
 	  self.username
   end
   
+  # ensure_profile makes sure a profile exists for this user (backwards compatibility)
   def ensure_profile
 	  if self.profile.nil?
 		  	profile = Profile.new()
@@ -50,6 +52,11 @@ attr_accessible :aim, :bio, :dob, :dst, :email, :homepage, :last_activity, :last
 		  	self.save 
 	  end
 	  self.profile
+  end
+  
+  # hasfav? will return whether this user has a favourite game with that id
+  def has_fav?(game_id)
+	  FavouriteGame.where(:user_id => self.id, :game_id => game_id).empty?
   end
   
   

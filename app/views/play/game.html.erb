@@ -59,6 +59,8 @@
 				Description: <span><%= @game.name %> </span> <br />
 				<br />
 				<br />
+				<%= button_to 'Add to favourites', addfav_path({:gamename => @game.name}), :method => :post %>
+				
 			</div>
 	</div>
 	

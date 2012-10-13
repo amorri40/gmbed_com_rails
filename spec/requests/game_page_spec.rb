@@ -1,11 +1,12 @@
 require 'spec_helper'
 
-describe "GameComments" do
+describe "GamePage" do
   
   fixtures :users
   fixtures :usergroups
   fixtures :games
   fixtures :game_posts
+  fixtures :favourite_games
   
   include RequestHelpers
   
@@ -25,6 +26,12 @@ describe "GameComments" do
 	  login_as_guest
 	  visit "/game/1945speed"
 	  page.should_not have_button('Add Comment')
+  end
+  
+  it "will allow logged in users to add to favourites" do 
+	  login_as_normal
+	  visit "/game/1945speed"
+	  click_button('Add to favourites')
   end
   
 end

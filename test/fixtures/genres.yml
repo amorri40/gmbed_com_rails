@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+genre_one:
   name: MyString
   description: MyString
   image: MyString
 
-two:
+genre_two:
   name: MyString
   description: MyString
   image: MyString

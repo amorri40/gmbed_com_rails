@@ -1,4 +1,4 @@
 cool_comment:
-  profile_id: admin_profile
-  user_id: admin
+  profile_id: admin_profile (Profile)
+  user_id: user_admin (User)
   comment: Cool

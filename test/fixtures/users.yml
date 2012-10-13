@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-admin:
-  username: Admin
+user_admin:
+  username: ali
   password: test
   reg_time: 2012-10-09 20:42:43
   last_activity: 2012-10-09 20:42:43
@@ -18,7 +18,7 @@ admin:
   occ: MyString
   usergroup: admin
 
-two:
+user_two:
   username: two
   password: two
   reg_time: 2012-10-09 20:42:43
